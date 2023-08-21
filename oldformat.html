@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Egg Problem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+</head>
+
+<body 
+    onload='javascript:generateEggWeights()' 
+    onscroll="javascript:scrollFunction()"
+    style="background-color:#36303C">
+
+    <div id='topbar' >
+        <h1 id='titletext' style="font-size:10vmax;  font-weight: 200; margin: 3%; "> Egg Simulator</h1>
+         <p id='intro' style="padding-left: 15%; padding-right: 15%;"> Drag the eggs to the scale to compare their weights. You have 3 uses of the scale to find the bad egg. When you think you have identified the bad egg, drag it to the top right corner to make a guess.</p>
+        <!-- <button onclick="generateEggWeights()">start simulator</button> --> 
+    </div>
+    <div id='cartonrow' >
+
+        <div style="position:sticky ;top: 20px; left: 20px;">
+            <div class="carton" id="mystery-carton"> 
+                <div draggable='true' class="item" id="item1"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggA.png"/>
+                </div>
+                <div draggable='true' class="item" id="item2"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggB.png"/>
+                </div>
+                <div draggable='true' class="item" id="item3"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggC.png"/>
+                </div>
+
+                <div draggable='true' class="item" id="item4"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggD.png"/>
+                </div>
+                <div draggable='true' class="item" id="item5"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggE.png"/>
+                </div>
+                <div draggable ='true' class="item" id="item6">
+                    <img draggable='false' style="width: 100%" src="assets/eggF.png"/>
+                </div>
+                <div draggable='true' class="item" id="item7"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggG.png"/>
+                </div>
+                <div draggable='true' class="item" id="item8"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggH.png"/>
+                </div>
+                <div draggable='true' class="item" id="item9"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggI.png"/>
+                </div>
+
+                <div draggable='true' class="item" id="item10"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggJ.png"/>
+                </div>
+                <div draggable='true' class="item" id="item11"> 
+                    <img draggable='false' style="width: 100%" src="assets/eggK.png"/>
+                </div>
+                <div draggable ='true' class="item" id="item12">
+                    <img draggable='false' style="width: 100%" src="assets/eggL.png"/>
+                </div>
+            </div>
+                <!-- <script src="app.js">generateBadEggs()</script> -->
+            <!-- </div> -->
+            
+        </div>
+
+        <!-- <div style="display:flex; flex-direction:column; width: 30%"> 
+           
+           
+        </div> -->
+        
+        <div style='align-items: center;'class="guess-box-box">
+            guess an egg
+            <div id="guess-box" class="box"></div>
+            
+
+                
+                <button class="button" onClick="makeGuess()">
+                
+                    submit guess
+            
+                </button>
+
+            <p id="guess-answer"></p>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="scale" > 
+            <div class="drop-targets">
+                <div class="box" id="scale-left"></div>
+                <div class="box" id="scale-right"></div>
+            </div>
+            
+        </div>
+        <div>
+            <button class="button" onclick="clearscale()">Clear Scale</button>
+            <button class="button" onclick="whatsinscale()">Use Scale</button>
+            <p id="scale-verdict">scale is balanced</p>
+            
+            <div id='scale-history'> 
+                <p >measure 1</p>
+                <div id="measure 1" class="measure-box" ></div>
+                <p >measure 2</p>
+                <div id="measure 2" class="measure-box" ></div>
+                <p >measure 3</p>
+                <div id="measure 3" class="measure-box" ></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="app.js"></script>
+</body>
+
+</html>

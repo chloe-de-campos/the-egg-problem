@@ -1,0 +1,213 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Egg Problem</title>
+    <link rel="icon" href="assets/egg.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body onload='javascript:generateEggWeights()' >
+    
+
+    <main>
+        <div id="titletext" >The Egg Problem 
+            <button 
+            style="display: flex; justify-content: center"
+            id = 'openPremise'
+            onClick="togglePanel()" 
+            class="accordion" 
+            class="mdc-icon-button"
+           
+            aria-label="read premise"
+            style="border: 0px; background-color: inherit; width: 40px; padding-left: 30px"
+            aria-pressed="false">
+          
+                <span style=" font-size: 42px" class="material-symbols-outlined">
+                expand_less
+                </span>
+
+            </button>
+        </div> 
+        
+        <div id="introbar">
+            <div >
+                <div class="panel" id="panel" >
+                <p >
+                    Here, have a dozen eggs.
+                    <br>
+                    <br>
+                    The only catch? One of them has gone bad. Though the bad egg is visually identical to the other eggs, you know that its weight is marginally different than the weight of the other eggs. You have a balance scale which you may use 3 times to compare sets of eggs. <strong> Your challenge: find the bad egg and determine whether it is heavier or lighter than the other eggs. </strong>
+                    <br>
+                    <br>
+                    I've labelled the eggs for you to tell them apart. Drag each egg to the boxes in the scale to compare their weights.The results of your previous measurements will appear on the left side. You have 3 uses of the scale to find the bad egg, before you'll have to confirm your guess.</p>
+                </div>
+            
+        </div>
+            
+          </div>
+      
+
+        <div  class="layout" >
+                <!-- container for the history and scale  -->
+                <div style="display:flex; flex-direction:row; justify-content:center">
+                    <!-- history  -->
+                    <div style="display: flex; flex-direction: column; justify-content: space-evenly; margin-bottom: 50px; margin-left: 10%">
+                        <h3>Scale Record</h3> 
+                        <div id="measure 1" class="measure-box" >
+                            <div id="measure1eggs" style="display: flex; flex-direction: row; "> 
+                                <div id="measure1lefteggs" style="padding-right: 20px; display: flex; flex-direction: row;"> 
+                                </div>
+                                <div id="measure1righteggs" style="padding-left: 20px; display: flex; flex-direction: row;"> 
+
+                                </div>
+                            </div>
+
+                            <div id="measure1scale">
+                            </div> 
+
+                        </div>
+
+                            
+                        
+                        <!-- <p >measurement 2</p> -->
+                        <div id="measure 2" class="measure-box" >
+                            <div id="measure2eggs" style="display: flex; flex-direction: row; ;"> 
+                                <div id="measure2lefteggs" style="padding-right: 20px; display: flex; flex-direction: row;"> 
+
+                                </div>
+                                <div id="measure2righteggs" style="padding-left: 20px; display: flex; flex-direction: row;"> 
+
+                                </div>
+                            </div>
+
+                            <div id="measure2scale">
+                            </div> 
+                        </div>
+   
+
+                        
+                        <!-- <p >measurement 3</p> -->
+                        <div id="measure 3" class="measure-box" >
+                            <div id="measure3eggs" style="display: flex; flex-direction: row; ;"> 
+                                <div id="measure3lefteggs" style="padding-right: 20px; display: flex; flex-direction: row;"> 
+
+                                </div>
+                                <div id="measure3righteggs" style="padding-left: 20px; display: flex; flex-direction: row;"> 
+
+                                </div>
+                            </div>
+
+                            <div id="measure3scale">
+                            </div> 
+                        </div>
+                     
+                        <!-- </div> -->
+
+                    </div>
+
+                    <!-- col with carton and scale -->
+                    <div id='cartoncol' >
+                        <div style="width: 60vw" class="carton" id="mystery-carton"> 
+                            
+                            <div draggable='true' class="item" id="item1" data-alphord="A"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggA.png"/>
+                            </div>
+                            <div draggable='true' class="item" id="item2" data-alphord="B"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggB.png"/>
+                            </div>
+                            <div draggable='true' class="item" id="item3" data-alphord="C"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggC.png"/>
+                            </div>
+                            <div draggable='true' class="item" id="item4" data-alphord="D"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggD.png"/>
+                            </div>
+                            <div draggable='true' class="item" id="item5" data-alphord="E"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggE.png"/>
+                            </div>
+                            <div draggable ='true' class="item" id="item6" data-alphord="F">
+                                <img draggable='false' style="width: 100%" src="assets/eggF.png"/>
+                            </div>
+                    
+                            <div draggable='true' class="item" id="item7" data-alphord="G"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggG.png"/>
+                            </div>
+                            <div draggable='true' class="item" id="item8" data-alphord="H"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggH.png"/>
+                            </div>
+                            <div draggable='true' class="item" id="item9" data-alphord="I"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggI.png"/>
+                            </div>
+
+                            <div draggable='true' class="item" id="item10" data-alphord="J"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggJ.png"/>
+                            </div>
+                            <div draggable='true' class="item" id="item11" data-alphord="K"> 
+                                <img draggable='false' style="width: 100%" src="assets/eggK.png"/>
+                            </div>
+                            <div draggable ='true' class="item" id="item12" data-alphord="L">
+                                <img draggable='false' style="width: 100%" src="assets/eggL.png"/>
+                            </div>
+                        </div>
+                        <!-- hidden guessbox and scale -->
+                        <div class="container"> 
+                        
+                            <div class="scale" id="scale">
+                            
+                                    <div class="drop-targets">
+                                        <div class="box" id="scale-left"></div>
+                                        <div class="box" id="scale-right"></div>
+                                    </div>
+                                    <div id='scaleimage' style="margin-left: 20%; margin-right: 20%">
+                                        <img style="width: 100%" src="assets/scale-balanced.png"/>
+                                    </div> 
+                                    <div style="margin-top: 20px; display: flex;
+                                        flex-wrap: wrap;
+                                        flex-direction: row;
+                                        justify-content: center;
+                                        align-content: center;">
+                                <button id="resetbutton" style="margin: 10px" class="button" onclick="clearscale()">Reset</button>
+                                <button id="measurebutton" style="margin: 10px" class="button" onclick="whatsinscale()">Measure</button>
+                            
+                            
+                                </div>
+                            
+                            </div> 
+
+                            <!-- guessbox appears after 3 measurements have been made! -->
+                            <div id="guess-box-box">
+                                Drag a the bad egg into the box
+                                <div class="box"id="guess-box"> </div>
+                            <button id="return to scale" style="margin: 10px" class="button" onclick="makeGuess()">Lock in your guess</button>
+
+                            <button id="restart the riddle" style="margin: 10px" class="button" onclick="location.reload()">Restart the riddle</button>
+                        
+                        
+                            </div>
+                        
+                        </div> 
+                       
+                        
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        <p style="font-size: 8pt; text-align:center">Read more about the egg problem <a href="https://mathpuzzlewiki.com/index.php/Twelve_weights"> here.</a></p>
+       
+    </main>
+    
+</body>
+<script src="app.js"></script>
+
+</html>
